@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/30ecc6e708.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    
+    .bcolor{
+        /* background-color: #a0ced9; */
+        background-color: transparent;
+        
+    }
+    .nv{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .nv a{
+        color: blue;
+    }
+    .nitem {
+    position: relative;
+    }
+
+    .nitem::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0; /* Initially, set width to 0 */
+        height: 2px;
+        background-color: rgb(6, 125, 194);
+        transition: width 0.3s ease; /* Transition for width property */
+    }
+
+    .nitem:hover::after {
+        width: 100%; 
+    }
+    
+    
+</style>
+<body>
+    <div>
+        <ul class="nav justify-content-center py-3 nv bcolor" style="border-bottom: 1px solid rgba(128, 128, 128, 0.322);" >
+            <li class="nav-item px-3" style="cursor: pointer;">
+              <img src="" alt="logo">    
+            </li>
+            <li class="nav-item px-3 nitem">
+              <a class="nav-link active" href="#">Apps</a>
+            </li>
+            <li class="nav-item px-3 nitem">
+              <a class="nav-link" href="#">Community</a>
+            </li>
+            <li class="nav-item px-3 nitem">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item px-3 nitem">
+              <a class="nav-link " href="{% url 'dashboard' %}">Dashboard</a>
+            </li>
+          </ul>
+    </div>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
