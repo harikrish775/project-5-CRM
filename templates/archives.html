@@ -1,0 +1,65 @@
+{% extends 'sidebar.html' %}
+{% block content %}
+{% load static %}
+
+archives
+
+<div id="archivedCardsContainer" class=" col-md-8 justify-content-center  py-5" style="display: flex;flex-wrap: wrap;gap: 20px;justify-content: start;">
+    
+</div>
+
+<script>
+   // Load archived cards from local storage
+    let archivedCards = JSON.parse(localStorage.getItem('archivedCards')) || [];
+
+    // Get container element
+    let archivedCardsContainer = document.getElementById('archivedCardsContainer');
+
+    // Function to remove a card from the DOM and update local storage
+    function removeCard(index) {
+        // Remove the corresponding card from the archivedCards array
+        archivedCards.splice(index, 1);
+        // Save the updated archivedCards array to local storage
+        saveToLocalStorage();
+        // Clear the container
+        archivedCardsContainer.innerHTML = '';
+        // Re-display archived cards
+        displayArchivedCards();
+    }
+
+    // Function to display archived cards
+    function displayArchivedCards() {
+        archivedCards.forEach(function(cardHTML, index) {
+            // Create a div element to contain each archived card
+            let cardDiv = document.createElement('div');
+            cardDiv.innerHTML = cardHTML; // Set inner HTML to the archived card content
+
+            // Create a button element to remove the corresponding card
+            let removeButton = document.createElement('button');
+            removeButton.textContent = 'Remove';
+            removeButton.addEventListener('click', function() {
+                // Call removeCard function with the corresponding index
+                removeCard(index);
+                // Remove the card from the DOM
+                cardDiv.remove();
+            });
+
+            // Append the button to the card div
+            cardDiv.appendChild(removeButton);
+
+            // Append the card div to the container
+            archivedCardsContainer.appendChild(cardDiv);
+        });
+    }
+
+    // Display archived cards initially
+    displayArchivedCards();
+
+    // Function to save archived cards to local storage
+    function saveToLocalStorage() {
+        localStorage.setItem('archivedCards', JSON.stringify(archivedCards));
+    }
+
+</script>
+
+{% endblock %}

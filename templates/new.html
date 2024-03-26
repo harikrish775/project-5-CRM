@@ -66,6 +66,7 @@
         margin: 5px 0px;
         
     }
+
     /* #Connect a:hover{
         background-color: aquamarine;
         border-top-left-radius: 50px;
@@ -78,49 +79,83 @@
     #Connect a:hover i{
         color: rgba(128, 128, 128, 0.667);
     }
-    
+    .btn:hover{
+        box-shadow: 1px 8px 16px black;
+        position: relative;
+        top: -3px;
+        
+    }
+    #footer{
+        background-color: rgba(0, 0, 0, 0.9);
+        border-top: 2px solid rgba(127, 255, 212, 0.5);
+        color: aliceblue;
+    }
     
     
 </style>
 
-<div class="container">
+<div class="py-5" style="background-color: rgba(127, 255, 212, 0.4);border-bottom-left-radius: 50%;border-bottom-right-radius: 50%;">
     <div>
         <center>
-            <h2 class="mt-5 ">All your Business in a one platform .</h2>
-            <h4 class="mb-3">simple, efficient and powerful.</h4>
-            <button class="btn btn-primary mb-5">Start Today</button>
+            <h1 class="mt-5 ">Crafting Expiriences, </h1>
+            <h2 class="mb-3">Building Relationships.</h2>
+            <p class="mb-4">Logo solutions are designed to elevate your business by seamlessly integrating <br> customer data, streamlining process, and enhacing overall engagement. </p>
+            <button class="btn mb-5" style="background-color:rgb(8, 160, 145) ;color: white;text-shadow: 1px 1px black;">Start Today</button>
         </center>
     </div>
 </div>
 
-<div class="row py-5" style="display: flex;flex-wrap: wrap;gap: 20px;justify-content: space-around;">
-    <div class="card " style="width: 27rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
+<div class="row py-5 mx-5" style="display: flex;flex-wrap: wrap;gap: 20px;justify-content: space-around;">
+    
+    <div class="card col-md pt-3" >
+        <img class="card-img-top" src="{% static 'images/3.jpg' %}" alt="Card image cap" style="width: 100%;height: 10rem;">
         <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Title 1</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
     </div>
-    <div class="card " style="width: 27rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card col-md pt-3" >
+        <img class="card-img-top" src="{% static 'images/5.webp' %}" alt="Card image cap" style="width: 100%;height: 10rem;">
         <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Title 2</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
     </div>
-    <div class="card " style="width: 27rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card col-md pt-3" >
+        <img class="card-img-top" src="{% static 'images/4.avif' %}" alt="Card image cap" style="width: 100%;height: 10rem;">
         <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Title 3</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
     </div>
     
 </div>
 
-<div class="py-5" style="min-height: 30vh;background-color: rgba(127, 255, 212, 0.363);;border-top-left-radius: 50%;border-top-right-radius: 50%">
-    
+<!-- buttons -->
+<div class="row d-flex my-5" >
+    <div class="col-md-3"></div>
+    <div class="col-md-6" style="justify-content: center;display: flex;"><button class="btn mx-1 px-5" style="background-color:rgb(8, 160, 145) ;color: white;text-shadow: 1px 1px black;border-radius: 25px;">Get Started</button> <button class="btn mx-1 px-5" style="background-color:rgb(8, 160, 145) ;color: white;text-shadow: 1px 1px black;border-radius: 25px;">Register</button></div>
+    <div class="col-md-3"></div>
+</div>
+<br>
 
+
+
+
+<!-- curved div -->
+<div class="py-5" style="min-height: 30vh;background-color: rgba(127, 255, 212, 0.4);border-top-left-radius: 50%;border-top-right-radius: 50%">
+    <br><br>
+
+
+<!-- jumbotron -->
+<div class="row my-5">
+    <div class="col-md-2"></div>
+    <div class="col-md-3"><img src="{% static 'images/6.png' %}" alt="" style="height: 15rem;width: 20rem;box-shadow: 0px 8px 15px rgba(127, 255, 212, 0.8);border-radius: 10px;"></div>
+    <div class="col">
+       <h1 class="display-4">Boost Your Business.</h1>
+      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    </div>
+</div>
 
 <!-- archive box -->
 <div class="row mt-3" id="archiveDiv"><div id="archiveBox" class="container justify-content-center d-flex text-align-center" style="border-radius: 50%;"><i id="archiveIcon" class="fa-solid fa-box-archive fa-beat-fade fa-xl" style="color: orangered;border: 1px solid orangered;border-radius: 50%;"></i></div></div>
@@ -130,33 +165,49 @@
 <div class="col-md-2"></div>
 <div class=" col-md-8 justify-content-center  py-5" style="display: flex;flex-wrap: wrap;gap: 20px;justify-content: start;">
     <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
-        <img class="card-img-top" src="..." alt="Card image cap">
+        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
         <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Card 1</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>
     <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
-        <img class="card-img-top" src="..." alt="Card image cap">
+        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
         <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Card 2</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>
     <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
-        <img class="card-img-top" src="..." alt="Card image cap">
+        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
         <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Card 3</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>
     <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
-        <img class="card-img-top" src="..." alt="Card image cap">
+        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
         <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Card 4</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+    <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
+        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+        <div class="card-body">
+        <h5 class="card-title">Card 5</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+    <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
+        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+        <div class="card-body">
+        <h5 class="card-title">Card 6</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
@@ -165,7 +216,7 @@
 </div>
 <div class="col-md-1"></div>
 <div class="col-md-1 " style="display:block;" id="Connect">
-        <div class="vertical-text">
+        <div id="connectHead" class="vertical-text">
             <h5>
                 <span>C</span>
                 <span>O</span>
@@ -200,71 +251,140 @@
 <!-- arc div end (close div above)-->
 
 <!-- footer -->
-<div class="row" style="background-color: rgba(23, 219, 154, 0.856); border-top: 2px solid rgb(11, 187, 197);">
-<div class="col mt-3">
-    <h6>abcd</h6>
-    <p>1</p>
-    <p>2</p>
-    <p>3</p>
-    <p>4</p>
-    <p>5</p>
-</div>
-<div class="col mt-3">
-    <h6>abcd</h6>
-    <p>1</p>
-    <p>2</p>
-    <p>3</p>
-    <p>4</p>
-</div>
-<div class="col mt-3">
-    <h6>abcd</h6>
-    <p>1</p>
-    <p>2</p>
-    <p>3</p>
-    <p>4</p>
-    
-</div>
-<div class="col mt-3">
-    <h6>abcd</h6>
-    <p>1</p>
-    <p>2</p>
-    <p>3</p>
-</div>
-
+<div class="row" id="footer">
+    <div class="col mt-3">
+        <h6 class="pb-2 border-bottom ">NAVIGATION</h6>
+        <p>Community</p>
+        <p>Tutorials</p>
+        <p>Documentations</p>
+        <p>Forum</p>
+        <p>Open Source</p>
+    </div>
+    <div class="col"></div>
+    <div class="col mt-3">
+        <h6 class="pb-2 border-bottom ">SERVICE</h6>
+        <p>Services</p>
+        <p>Hosting</p>
+        <p>Support</p>
+        <p>Upgrade</p>
+    </div>
+    <div class="col"></div>
+    <div class="col mt-3">
+        <h6 class="pb-2 border-bottom ">ABOUT US</h6>
+        <p>About Us</p>
+        <p>Our Company</p>
+        <p>Assets</p>
+        <p>Events</p>    
+    </div>
+    <div class="col"></div>
+    <div class="col mt-3">
+        <h6 class="pb-2 border-bottom ">CONNECT WITH US</h6>
+        <p>Email</p>
+        <p>Phone</p>
+        <p>Sms</p>
+        <p>Whatsapp</p>
+        <p>Facebook</p>
+    </div>
 </div>
 
 
 <script>
+    // let cards = document.getElementsByClassName('cardbox');
+    // let archiveBox = document.getElementById('archiveBox')
+    // let archiveDiv = document.getElementById('archiveDiv')
+    // for(let card of cards){
+    //     card.addEventListener("dragstart",function(e){
+    //         archiveDiv.style.display = 'block';
+    //         archiveDiv.style.opacity = '1';
+    //         let selected = e.target;
+
+            
+    //         archiveBox.addEventListener("dragover",function(e){
+    //             e.preventDefault();
+    //         });
+
+    //         // Add dragend event handler to reset selected card
+    //         card.addEventListener("dragend", function(e) {
+    //             archiveDiv.style.display = 'none';
+    //             selected = null;
+    //         });
+
+    //         archiveBox.addEventListener("drop",function(e){
+    //             // archiveBox.appendChild(selected);
+                
+
+    //             // aaaa
+    //             selected.style.display = 'none';
+    //             archiveDiv.style.display = 'none';
+    //             alert('successfull archived')
+    //             selected = null;
+    //         })
+
+    //     })
+    // }
+
+
     let cards = document.getElementsByClassName('cardbox');
-    let archiveBox = document.getElementById('archiveBox')
-    let archiveDiv = document.getElementById('archiveDiv')
-    for(let card of cards){
-        card.addEventListener("dragstart",function(e){
+    let archiveBox = document.getElementById('archiveBox');
+    let archiveDiv = document.getElementById('archiveDiv');
+
+    // Load archived cards from local storage
+    let archivedCards = JSON.parse(localStorage.getItem('archivedCards')) || [];
+
+    // Function to save archived cards to local storage
+    function saveToLocalStorage() {
+        localStorage.setItem('archivedCards', JSON.stringify(archivedCards));
+    }
+
+    // Function to handle dropping a card into the archive box
+    function handleDrop(selectedCard) {
+        selectedCard.style.display = 'none';
+        archiveDiv.style.display = 'none';
+        archivedCards.push(selectedCard.innerHTML); // Save card HTML content
+        saveToLocalStorage(); // Save to local storage
+        alert('Successfully archived');
+    }
+
+    for (let card of cards) {
+        card.addEventListener("dragstart", function(e) {
             archiveDiv.style.display = 'block';
             archiveDiv.style.opacity = '1';
             let selected = e.target;
 
-            
-            archiveBox.addEventListener("dragover",function(e){
+            archiveBox.addEventListener("dragover", function(e) {
                 e.preventDefault();
             });
 
-            // Add dragend event handler to reset selected card
             card.addEventListener("dragend", function(e) {
                 archiveDiv.style.display = 'none';
                 selected = null;
             });
 
-            archiveBox.addEventListener("drop",function(e){
-                // archiveBox.appendChild(selected);
-                selected.style.display = 'none';
-                archiveDiv.style.display = 'none';
-                alert('successfull archived')
-                selected = null;
-            })
-
-        })
+            archiveBox.addEventListener("drop", function(e) {
+                e.preventDefault();
+                handleDrop(selected);
+            });
+        });
     }
+
+    function hideArchivedCards() {
+    // Load archived cards from local storage
+    let archivedCards = JSON.parse(localStorage.getItem('archivedCards')) || [];
+    
+    // Iterate through each card
+    for (let card of cards) {
+        // Check if the card's inner HTML content is in the archived cards
+        if (archivedCards.includes(card.innerHTML)) {
+            card.style.display = 'none'; // Hide the card if it's archived
+        }
+    }
+}
+
+// Call the function to hide archived cards when the page loads
+window.addEventListener('load', hideArchivedCards);
+
+
+
 
 
 
@@ -288,6 +408,25 @@
         archiveBox.classList.remove('dragover'); // Remove 'dragover' class when leaving
         
     });
+
+
+    // screen size reduce for verticle connect
+    // Function to add or remove vertical-text class based on screen size
+    function toggleVerticalTextClass() {
+    var textContainer = document.getElementById("connectHead");
+    if (window.innerWidth > 768) {
+        textContainer.classList.add("vertical-text"); // Add vertical-text class for normal size screens
+    } else {
+        textContainer.classList.remove("vertical-text"); // Remove vertical-text class for smaller screens
+    }
+    }
+
+    // Call the function initially to set the correct class based on screen size
+    toggleVerticalTextClass();
+
+    // Add event listener for window resize to toggle the class dynamically
+    window.addEventListener("resize", toggleVerticalTextClass);
+
     
 </script>
 

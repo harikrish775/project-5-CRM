@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRM</title>
@@ -11,10 +12,11 @@
     <script src="https://kit.fontawesome.com/30ecc6e708.js" crossorigin="anonymous"></script>
 </head>
 <style>
+  
     
     .bcolor{
         /* background-color: #a0ced9; */
-        background-color: transparent;
+        background: linear-gradient(to top,rgba(127, 255, 212, 0.4),white);
         
     }
     .nv{
@@ -42,13 +44,37 @@
         width: 100%; 
     }
     
+    /* scrollbar */
+    /* Width */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: transparent;
+      
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: rgb(8, 182, 124);
+      border-radius: 10px;
+      
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
     
 </style>
 <body>
     <div>
-        <ul class="nav justify-content-center py-3 nv bcolor" style="border-bottom: 1px solid rgba(128, 128, 128, 0.322);" >
-            <li class="nav-item px-3" style="cursor: pointer;">
-              <img src="" alt="logo">    
+        <ul class="nav justify-content-center py-4 nv bcolor" >
+            <li class="nav-item px-3 mt-2" style="cursor: pointer;">
+              <img src="{% static 'images/logoo.png' %}" height="30" alt="logo">    
             </li>
             <li class="nav-item px-3 nitem">
               <a class="nav-link active" href="#">Apps</a>

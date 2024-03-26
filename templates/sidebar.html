@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {%load static%}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRM</title>
@@ -81,8 +82,8 @@
             <div class="col-md-3">
                 <div class="sidebar">
                     <ul class="nav flex-column nv bcolor">
-                        <li class="nav-item px-3">
-                            <a style="text-decoration: none ;" href="{% url 'landing_page' %}"><img src="" alt="logo"></a>   
+                        <li class="nav-item px-3 my-3">
+                            <a style="text-decoration: none ;" href="{% url 'landing_page' %}"><img src="{% static 'images/logoo.png' %}" alt="logo" height="30"></a>   
                         </li>
                         <li class="nav-item px-3 ">
                             <a class="nav-link nitem" href="#">Apps</a>
@@ -94,7 +95,7 @@
                             <a class="nav-link nitem" href="#">Pricing</a>
                         </li>
                         <li class="nav-item px-3 ">
-                            <a class="nav-link nitem" href="#">Dashboard</a>
+                            <a class="nav-link nitem" href="{% url 'archives' %}">Archives</a>
                         </li>
                     </ul>
                 </div>
