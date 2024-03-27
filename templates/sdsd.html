@@ -1,0 +1,41 @@
+.graph-container {
+    display: flex;
+    align-items: flex-end; /* Align the graph at the bottom */
+  }
+  
+  .graph {
+    display: flex;
+    flex-direction: column-reverse; /* Reverse the order of columns to start from bottom */
+  }
+  
+  .y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px; /* Adjust as needed */
+    margin-right: 10px; /* Adjust as needed */
+  }
+  
+  .x-axis {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Ensure it spans the width of the graph */
+  }
+  
+  .mark {
+    font-size: 12px; /* Adjust as needed */
+    color: gray;
+  }
+  
+  .bars {
+    display: flex;
+    flex-grow: 1;
+  }
+  
+  .bar {
+    flex: 1;
+    background-color: #007bff;
+    box-sizing: border-box; /* Ensure borders are included in the width calculation */
+    border: 1px solid #fff; /* Add border between bars */
+    
+  }

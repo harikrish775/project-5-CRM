@@ -79,7 +79,7 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <div class="sidebar">
                     <ul class="nav flex-column nv bcolor">
                         <li class="nav-item px-3 my-3">
@@ -95,12 +95,15 @@
                             <a class="nav-link nitem" href="#">Pricing</a>
                         </li>
                         <li class="nav-item px-3 ">
+                            <a class="nav-link nitem" href="{% url 'dashboard' %}">Dash</a>
+                        </li>
+                        <li class="nav-item px-3 ">
                             <a class="nav-link nitem" href="{% url 'archives' %}">Archives</a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-10" >
                 {% block content %}
                 {% endblock %}
             </div>

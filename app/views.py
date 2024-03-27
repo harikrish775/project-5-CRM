@@ -11,3 +11,4 @@ def dashboard(request):
 
 def archives(request):
     return render(request,'archives.html')
+

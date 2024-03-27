@@ -2,11 +2,29 @@
 {% block content %}
 {% load static %}
 
-archives
+<style>
 
-<div id="archivedCardsContainer" class=" col-md-8 justify-content-center  py-5" style="display: flex;flex-wrap: wrap;gap: 20px;justify-content: start;">
+    .cardbox{
+        border-radius: 5px;
+    }
+    /* .cardbox:hover{
+        box-shadow: 2px 3px 3px grey;
+        top: -5px;
+    } */
     
+    .draggable:active {
+        opacity: 0.4; /* Reduce opacity when dragging */
+        cursor: grabbing;
+    }
+</style>
+
+<div class="mt-4" ><center><h1 style="display: block;" class="px-3 pb-4 border-bottom">Archives</h1></center></div>
+    
+<div id="archivedCardsContainer" class=" justify-content-center py-5" style="display: flex;flex-wrap: wrap;gap: 20px;justify-content: start;">
+    <!-- cards here     -->
 </div>
+    
+
 
 <script>
    // Load archived cards from local storage
@@ -32,14 +50,20 @@ archives
         archivedCards.forEach(function(cardHTML, index) {
             // Create a div element to contain each archived card
             let cardDiv = document.createElement('div');
+            cardDiv.classList.add('card', 'draggable', 'cardbox');
+            cardDiv.style.width = '18rem';
             cardDiv.innerHTML = cardHTML; // Set inner HTML to the archived card content
 
             // Create a button element to remove the corresponding card
             let removeButton = document.createElement('button');
-            removeButton.textContent = 'Remove';
+            removeButton.classList.add('btn','btn-warning','my-3');
+            removeButton.style.width = '50%';
+            removeButton.style.marginLeft = '25%';
+            removeButton.textContent = 'Unarchive';
             removeButton.addEventListener('click', function() {
                 // Call removeCard function with the corresponding index
                 removeCard(index);
+                alert('Unarchived !')
                 // Remove the card from the DOM
                 cardDiv.remove();
             });
@@ -63,3 +87,4 @@ archives
 </script>
 
 {% endblock %}
+
