@@ -3,52 +3,12 @@
 {% load static %}
 
 <style>
-    .cardbox{
-        border-radius: 5px;
-    }
-    .cardbox:hover{
-        box-shadow: 2px 3px 3px grey;
-        top: -5px;
-    }
+    
+    
     .row{
         margin: 0;
     }
-    .draggable:active {
-        opacity: 0.4; /* Reduce opacity when dragging */
-        cursor: grabbing;
-    }
-    #archiveBox{
-        width: 100px;
-        height: 100px;
-        transition: all 0.7s ease;
-    }
-    #archiveBox.dragover{
-        height: 150px;
-        width: 150px;
-        
-    }
-    #archiveBox.drop{
-        height: 0px;
-        width: 0px;
-        transition: all 0.7s ease;
-    }
-    #archiveIcon { 
-        position: relative;   
-        justify-self: center;
-        align-self: center;
-        padding: 70% 50%;
-        transition: top 0.7s ease; 
-        border-radius: 50%;
-    }
-    #archiveBox.dragover #archiveIcon {
-    font-size: 2em; 
-    padding: 50% 35%;
-    transition: font-size 0.7s ease; 
-    }
-    #archiveDiv{
-        display: none;
-        transition: opacity 0.7s ease;
-    }
+    
     
     .vertical-text {
     font-family: 'Times New Roman', Times, serif; /* Set font family */
