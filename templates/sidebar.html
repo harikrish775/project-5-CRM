@@ -13,6 +13,7 @@
 </head>
 <style>
     
+    
     .bcolor{
         /* background-color: #a0ced9; */
         background-color: transparent;
@@ -22,7 +23,7 @@
         font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
     .nv a{
-        color: blue;
+        color: rgb(239, 239, 246);
     }
     .nitem {
     position: relative;
@@ -35,12 +36,12 @@
         left: 0;
         width: 0; /* Initially, set width to 0 */
         height: 2px;
-        background-color: rgb(6, 125, 194);
+        background-color: rgb(240, 245, 248);
         transition: width 0.3s ease; /* Transition for width property */
     }
 
     .nitem:hover::after {
-        width: 100%; 
+        width: 75%; 
     }
 
     .sidebar {
@@ -80,7 +81,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2">
-                <div class="sidebar">
+                
+                <div class="sidebar" style="background-color: rgba(44, 194, 217, 0.872);" >
                     <ul class="nav flex-column nv bcolor">
                         <li class="nav-item px-3 my-3">
                             <a style="text-decoration: none ;" href="{% url 'landing_page' %}"><img src="{% static 'images/logoo.png' %}" alt="logo" height="30"></a>   
