@@ -81,15 +81,15 @@
     <div class="container-fluid">
         <div class="row">
             <!-- Collapse Button -->
-            <button class="btn btn-primary d-md-none" type="button" data-toggle="collapse" data-target="#sidebarCollapse" aria-expanded="false" aria-controls="sidebarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <button style="z-index: 101;" class="btn btn-primary d-md-none" type="button" data-toggle="collapse" data-target="#sidebarCollapse" aria-expanded="false" aria-controls="sidebarCollapse">
+                <span class="navbar-toggler-icon" style="z-index: 101;"></span>
+            </button><br><br>
     
             <!-- Sidebar Column -->
             <div class="col-md-2 collapse d-md-block" id="sidebarCollapse" style="z-index: 100;">
                 <div class="sidebar" style="background-color: rgba(44, 194, 217, 0.872);">
                     <ul class="nav flex-column nv bcolor">
-                        <li class="nav-item px-3 my-3">
+                        <li class="nav-item px-3 my-3" style="margin-top: 20px;">
                             <a style="text-decoration: none;" href="{% url 'landing_page' %}"><img src="{% static 'images/logoo.png' %}" alt="logo" height="30"></a>   
                         </li>
                         <li class="nav-item px-3">
@@ -102,7 +102,7 @@
                             <a class="nav-link nitem" href="#">Pricing</a>
                         </li>
                         <li class="nav-item px-3">
-                            <a class="nav-link nitem" href="{% url 'dashboard' %}">Dash</a>
+                            <a class="nav-link nitem" href="{% url 'dashboard' %}">Dashboard</a>
                         </li>
                         <li class="nav-item px-3">
                             <a class="nav-link nitem" href="{% url 'archives' %}">Archives</a>
