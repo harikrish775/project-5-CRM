@@ -5,6 +5,7 @@
 <style>
     
     
+    
     .row{
         margin: 0;
     }
@@ -50,14 +51,90 @@
         border-top: 2px solid rgba(127, 255, 212, 0.5);
         color: aliceblue;
     }
+
+
+   /* .skill{
+    width: 160px;
+    height: 160px;
+    background-color: cornflowerblue;
+    position: relative;
+   } */
+   .outer{
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    box-shadow: 6px 6px 14px -8px black, 6px 6px 14px -8px white;
+    padding: 19px;
+   }
+   .inner{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: inset 6px 6px 9px -7px black,inset -6px -6px 9px -7px white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   #number{
+    font-weight: 600;
+   }
+   #circle1{
+    fill: none;
+    stroke: rgb(26, 200, 212);
+    stroke-width: 20px;
+    stroke-dasharray: 472;
+    stroke-dashoffset: 472;
+    animation: anim 1s linear forwards;
+    
+   }
+   @keyframes anim{
+    100%{
+        stroke-dashoffset: 165;
+    }
+   }
+
+   #circle2{
+    fill: none;
+    stroke: rgb(26, 200, 212);
+    stroke-width: 20px;
+    stroke-dasharray: 472;
+    stroke-dashoffset: 472;
+    animation: anim2 1s linear forwards;
+   }
+   @keyframes anim2{
+    100%{
+        stroke-dashoffset: 94;
+    }
+   }
+   #circle3{
+    fill: none;
+    stroke: rgb(26, 200, 212);
+    stroke-width: 20px;
+    stroke-dasharray: 472;
+    stroke-dashoffset: 472;
+    animation: anim3 1s linear forwards;
+   }
+   @keyframes anim3{
+    100%{
+        stroke-dashoffset: 255;
+    }
+   }
+
+   svg{
+    position: relative;
+    top: -160px;
+   }
+   
+
+
     
     
 </style>
 
-<div class="py-5" style="background-color: rgba(127, 255, 212, 0.4);border-bottom-left-radius: 50%;border-bottom-right-radius: 50%;">
+<div class="py-5" style="background-color: rgba(127, 255, 212, 0.5);border-bottom-left-radius: 50%;border-bottom-right-radius: 50%;">
     <div>
         <center>
-            <h1 class="mt-5 ">Crafting Expiriences, </h1>
+            <h1 class="mt-5 " >Crafting Expiriences, </h1>
             <h2 class="mb-3">Building Relationships.</h2>
             <p class="mb-4">Logo solutions are designed to elevate your business by seamlessly integrating <br> customer data, streamlining process, and enhacing overall engagement. </p>
             <button class="btn mb-5" style="background-color:rgb(8, 160, 145) ;color: white;text-shadow: 1px 1px black;">Start Today</button>
@@ -65,28 +142,89 @@
     </div>
 </div>
 
-<div class="row py-5 mx-5" style="display: flex;flex-wrap: wrap;gap: 20px;justify-content: space-around;">
+<div class="row py-5 mx-5" style="display: flex;flex-wrap: wrap;gap: 20px;justify-content: space-around;max-height: 300px;">
     
-    <div class="card col-md pt-3" >
-        <img class="card-img-top" src="{% static 'images/5.jpg' %}" alt="Card image cap" style="width: 100%;height: 10rem;">
-        <div class="card-body">
+    <div class="col-md pt-3" style="max-height: 250px;">
+        
+        <center style="height: 20px;">
+            <h6 class="mt-5 mb-2" style="color: gray;">Customers</h6>
+            <div class="skill">
+                <div class="outer">
+                    <div class="inner">
+                        <div id="number">65%</div>
+                    </div>
+                </div>
+            </div>    
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                <defs>
+                   <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#e91e63" />
+                      <stop offset="100%" stop-color="#673ab7" />
+                   </linearGradient>
+                </defs>
+                <circle id="circle1" cx="80" cy="80" r="70" stroke-linecap="round" />
+            </svg> 
+            
+        </center>            
+        <!-- <div class="card-body">
         <h5 class="card-title">Title 1</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
+        </div> -->
     </div>
-    <div class="card col-md pt-3" >
-        <img class="card-img-top" src="{% static 'images/5.web' %}" alt="Card image cap" style="width: 100%;height: 10rem;">
-        <div class="card-body">
+
+    <div class="col-md pt-3" style="max-height: 10%;">
+        <center>
+            <h6 class="mt-2 mb-2" style="color: gray;">Revenue</h6>
+            <div class="skill">
+                <div class="outer">
+                    <div class="inner">
+                        <div id="number">80%</div>
+                    </div>
+                </div>
+            </div>    
+            
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                <defs>
+                   <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#e91e63" />
+                      <stop offset="100%" stop-color="#673ab7" />
+                   </linearGradient>
+                </defs>
+                <circle id="circle2" cx="80" cy="80" r="70" stroke-linecap="round" />
+            </svg> 
+            <h5>kjbd</h5>
+        </center>
+        
+        <!-- <div class="card-body">
         <h5 class="card-title">Title 2</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
+        </div> -->
     </div>
-    <div class="card col-md pt-3" >
-        <img class="card-img-top" src="{% static 'images/5.avif' %}" alt="Card image cap" style="width: 100%;height: 10rem;">
-        <div class="card-body">
+
+    <div class="col-md pt-3" >
+        <center>
+            <h6 class="mt-5 mb-2" style="color: gray;">Orders</h6>
+            <div class="skill" >
+                <div class="outer">
+                    <div class="inner">
+                        <div id="number">45%</div>
+                    </div>
+                </div>
+            </div>    
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
+                <defs>
+                   <linearGradient id="GradientColor">
+                      <stop offset="0%" stop-color="#e91e63" />
+                      <stop offset="100%" stop-color="#673ab7" />
+                   </linearGradient>
+                </defs>
+                <circle id="circle3" cx="80" cy="80" r="70" stroke-linecap="round" />
+            </svg> 
+        </center>
+        <!-- <div class="card-body" style="height: 20px;">
         <h5 class="card-title">Title 3</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
+        </div> -->
     </div>
     
 </div>
@@ -103,7 +241,7 @@
 
 
 <!-- curved div -->
-<div class="py-5" style="min-height: 30vh;background-color: rgba(127, 255, 212, 0.4);border-top-left-radius: 50%;border-top-right-radius: 50%">
+<div class="py-5" style="min-height: 30vh;background-color: rgba(127, 255, 212, 0.5);border-top-left-radius: 50%;border-top-right-radius: 50%">
     <br><br>
 
 
@@ -205,8 +343,9 @@
 
 <!-- footer -->
 <div class="row" id="footer">
+    <div class="col-md-1"></div>
     <div class="col mt-3">
-        <h6 class="pb-2 border-bottom ">NAVIGATION</h6>
+        <h6 class="pb-2 " style="border-bottom: 1px solid white;width: 50%;">NAVIGATION</h6>
         <p>Community</p>
         <p>Tutorials</p>
         <p>Documentations</p>
@@ -215,7 +354,7 @@
     </div>
     <div class="col"></div>
     <div class="col mt-3">
-        <h6 class="pb-2 border-bottom ">SERVICE</h6>
+        <h6 class="pb-2 "  style="border-bottom: 1px solid white;width: 50%;">SERVICE</h6>
         <p>Services</p>
         <p>Hosting</p>
         <p>Support</p>
@@ -223,7 +362,7 @@
     </div>
     <div class="col"></div>
     <div class="col mt-3">
-        <h6 class="pb-2 border-bottom ">ABOUT US</h6>
+        <h6 class="pb-2 "  style="border-bottom: 1px solid white;width: 50%;">ABOUT US</h6>
         <p>About Us</p>
         <p>Our Company</p>
         <p>Assets</p>
@@ -231,13 +370,14 @@
     </div>
     <div class="col"></div>
     <div class="col mt-3">
-        <h6 class="pb-2 border-bottom ">CONNECT WITH US</h6>
+        <h6 class="pb-2 "  style="border-bottom: 1px solid white;width: 50%;">CONNECT WITH US</h6>
         <p>Email</p>
         <p>Phone</p>
         <p>Sms</p>
         <p>Whatsapp</p>
         <p>Facebook</p>
     </div>
+    <div class="col-md-1"></div>
 </div>
 
 
@@ -363,15 +503,14 @@ window.addEventListener('load', hideArchivedCards);
     });
 
 
-    // screen size reduce for verticle connect
     // Function to add or remove vertical-text class based on screen size
     function toggleVerticalTextClass() {
-    var textContainer = document.getElementById("connectHead");
-    if (window.innerWidth > 768) {
-        textContainer.classList.add("vertical-text"); // Add vertical-text class for normal size screens
-    } else {
-        textContainer.classList.remove("vertical-text"); // Remove vertical-text class for smaller screens
-    }
+        var textContainer = document.getElementById("connectHead");
+        if (window.innerWidth > 578) {
+            textContainer.classList.add("vertical-text"); // Add vertical-text class for normal size screens
+        } else {
+            textContainer.classList.remove("vertical-text"); // Remove vertical-text class for smaller screens
+        }
     }
 
     // Call the function initially to set the correct class based on screen size

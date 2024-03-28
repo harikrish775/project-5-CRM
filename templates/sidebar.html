@@ -80,37 +80,44 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2">
-                
-                <div class="sidebar" style="background-color: rgba(44, 194, 217, 0.872);" >
+            <!-- Collapse Button -->
+            <button class="btn btn-primary d-md-none" type="button" data-toggle="collapse" data-target="#sidebarCollapse" aria-expanded="false" aria-controls="sidebarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Sidebar Column -->
+            <div class="col-md-2 collapse d-md-block" id="sidebarCollapse" style="z-index: 100;">
+                <div class="sidebar" style="background-color: rgba(44, 194, 217, 0.872);">
                     <ul class="nav flex-column nv bcolor">
                         <li class="nav-item px-3 my-3">
-                            <a style="text-decoration: none ;" href="{% url 'landing_page' %}"><img src="{% static 'images/logoo.png' %}" alt="logo" height="30"></a>   
+                            <a style="text-decoration: none;" href="{% url 'landing_page' %}"><img src="{% static 'images/logoo.png' %}" alt="logo" height="30"></a>   
                         </li>
-                        <li class="nav-item px-3 ">
+                        <li class="nav-item px-3">
                             <a class="nav-link nitem" href="#">Apps</a>
                         </li>
-                        <li class="nav-item px-3 ">
+                        <li class="nav-item px-3">
                             <a class="nav-link nitem" href="#">Community</a>
                         </li>
-                        <li class="nav-item px-3 ">
+                        <li class="nav-item px-3">
                             <a class="nav-link nitem" href="#">Pricing</a>
                         </li>
-                        <li class="nav-item px-3 ">
+                        <li class="nav-item px-3">
                             <a class="nav-link nitem" href="{% url 'dashboard' %}">Dash</a>
                         </li>
-                        <li class="nav-item px-3 ">
+                        <li class="nav-item px-3">
                             <a class="nav-link nitem" href="{% url 'archives' %}">Archives</a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="col-md-10" >
+            <!-- Main Content Column -->
+            <div class="col-md-10">
                 {% block content %}
                 {% endblock %}
             </div>
         </div>
     </div>
+    
     
     
     

@@ -3,14 +3,32 @@
 {% load static %}
 
 <style>
+    body{
+        background-color: rgba(20, 188, 168, 0.2);
+    }
 
-    .cardbox{
+.card-body{
+        /* background-color: #ff6385; */
+        background-color: rgb(195, 250, 232);
         border-radius: 5px;
     }
-    /* .cardbox:hover{
+    .cardbox{
+        /* border-radius: 15px; */
         box-shadow: 2px 3px 3px grey;
+        padding: 5px;
+        background-color: #82f9f9;
+        
+        /* background-color: rgba(20, 188, 168, 0.2); */
+    }
+    
+    .cardbox:hover{
+        box-shadow: 2px 8px 20px black;
         top: -5px;
-    } */
+    }
+    .cardbox a {
+        display: none;
+    }
+    
     
     .draggable:active {
         opacity: 0.4; /* Reduce opacity when dragging */
@@ -18,11 +36,12 @@
     }
 </style>
 
-<div class="mt-4" ><center><h1 style="display: block;" class="px-3 pb-4 border-bottom">Archives</h1></center></div>
+<div class="mt-4" ><h5 style="display: block;" class="px-3 pb-4 border-bottom">Archives</h5></div>
     
 <div id="archivedCardsContainer" class=" justify-content-center py-5" style="display: flex;flex-wrap: wrap;gap: 20px;justify-content: start;">
     <!-- cards here     -->
 </div>
+<center ><div id="oops" style="display: none;"><h1 style="color: gray;" >OOPS! Nothing Here .</h1></div></center>
     
 
 
@@ -32,6 +51,8 @@
 
     // Get container element
     let archivedCardsContainer = document.getElementById('archivedCardsContainer');
+
+    let oopsMsg = document.getElementById('oops');
 
     // Function to remove a card from the DOM and update local storage
     function removeCard(index) {
@@ -47,7 +68,13 @@
 
     // Function to display archived cards
     function displayArchivedCards() {
-        archivedCards.forEach(function(cardHTML, index) {
+        
+        if (archivedCards.length === 0){
+            oopsMsg.style.display = 'block';
+
+        }else{
+            oopsMsg.style.display = 'none';
+            archivedCards.forEach(function(cardHTML, index) {
             // Create a div element to contain each archived card
             let cardDiv = document.createElement('div');
             cardDiv.classList.add('card', 'draggable', 'cardbox');
@@ -74,6 +101,7 @@
             // Append the card div to the container
             archivedCardsContainer.appendChild(cardDiv);
         });
+        }
     }
 
     // Display archived cards initially

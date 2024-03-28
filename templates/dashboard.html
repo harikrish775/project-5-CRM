@@ -9,8 +9,8 @@
         background-color: rgba(20, 188, 168, 0.2);
     }
     .card-body{
-        /* background-color: #ff6385; */
-        background-color: rgb(195, 250, 232);
+        background-color: whitesmoke;
+        /* background-color: rgb(195, 250, 232); */
         border-radius: 5px;
     }
     .cardbox{
@@ -28,12 +28,15 @@
     }
     .cardbox a {
         text-decoration: none;
-        color: green;
+        color: white;
+        background-color: rgb(71, 71, 239);
     }
     .cardbox a:hover{
-        color: rgb(97, 254, 18);
+        
+        text-transform: uppercase;
+        box-shadow: 1px 2px 4px pink;
         font-weight: 500;
-        text-shadow: 1px 0 black;
+        
     }
 
     .draggable:active {
@@ -41,15 +44,16 @@
         cursor: grabbing;
     }
     #archiveBox{
-        width: 100px;
-        height: 100px;
+        /* width: 100px;
+        height: 100px; */
         transition: all 0.7s ease;
-    }
-    #archiveBox.dragover{
-        height: 150px;
-        width: 150px;
         
     }
+    /* #archiveBox.dragover{
+        height: 150px;
+        width: 150px;       
+        
+    } */
     #archiveBox.drop{
         height: 0px;
         width: 0px;
@@ -59,13 +63,16 @@
         position: relative;   
         justify-self: center;
         align-self: center;
-        padding: 70% 50%;
-        transition: top 0.7s ease; 
+        padding: 5% 4%;
         border-radius: 50%;
+        border: 2px solid rgba(255, 68, 0, 0.6);
+        background-color: rgba(255, 68, 0, 0.2);
+        transition: top 0.7s ease; 
+        
     }
     #archiveBox.dragover #archiveIcon {
     font-size: 2em; 
-    padding: 50% 35%;
+    /* padding: 50% 35%; */
     transition: font-size 0.7s ease; 
     }
     #archiveDiv{
@@ -168,9 +175,9 @@
 <div class="row m-2">
     <div class="col-md-9 mr-3">
         <div class="row">
-            <div class="col-md-4 my-3 p-2 mr-md-2" style="border-radius: 15px;background-color: white;box-shadow: 1px 2px 4px gray;"><div class="row"><div class="col-4"><img src="{% static 'images/.png' %}" width="70" height="70"></div> <div class="col mt-2">Revenue <br> $45,876 <span class="ml-4 px-2 py-1" style="color: green;background-color: rgba(10, 220, 10, 0.37);font-size: small;border-radius: 15px;">+ 17.6%</span></div> </div></div>
-            <div class="col-md-3 my-3 p-2 mx-md-3" style="border-radius: 15px;background-color: white;box-shadow: 1px 2px 4px gray;"><div class="row"><div class="col-4"><img src="{% static 'images/.png' %}" width="70" height="70"></div> <div class="col mt-2">Orders <br> 6586 <span class="ml-3 px-2 py-1" style="color: red;background-color: rgba(255, 0, 0, 0.3);font-size: small;border-radius: 15px;">- 0.6%</span></div> </div></div>
-            <div class="col-md-4 my-3 p-2 ml-md-2" style="border-radius: 15px;background-color: white;box-shadow: 1px 2px 4px gray;"><div class="row"><div class="col-4"><img src="{% static 'images/.png' %}" width="70" height="70"></div> <div class="col mt-2">Customers <br> 4876 <span class="ml-5 px-2 py-1" style="color: red;background-color: rgba(255, 0, 0, 0.3);font-size: small;border-radius: 15px;">- 0.4%</span></div> </div></div>
+            <div class="col-md-4 my-3 p-2 mr-md-2" style="border-radius: 15px;background-color: white;box-shadow: 1px 2px 4px gray;"><div class="row"><div class="col-4"><img src="{% static 'images/pie-chart.png' %}" width="70" height="70"></div> <div class="col mt-2">Revenue <br> $45,876 <span class="ml-4 px-2 py-1" style="color: green;background-color: rgba(10, 220, 10, 0.37);font-size: small;border-radius: 15px;">+ 17.6%</span></div> </div></div>
+            <div class="col-md-3 my-3 p-2 mx-md-3" style="border-radius: 15px;background-color: white;box-shadow: 1px 2px 4px gray;"><div class="row"><div class="col-4"><img src="{% static 'images/box.png' %}" width="70" height="70"></div> <div class="col mt-2">Orders <br> 6586 <span class="ml-3 px-2 py-1" style="color: red;background-color: rgba(255, 0, 0, 0.3);font-size: small;border-radius: 15px;">- 0.6%</span></div> </div></div>
+            <div class="col-md-4 my-3 p-2 ml-md-2" style="border-radius: 15px;background-color: white;box-shadow: 1px 2px 4px gray;"><div class="row"><div class="col-4"><img src="{% static 'images/14.png' %}" width="70" height="70"></div> <div class="col mt-2">Customers <br> 4876 <span class="ml-5 px-2 py-1" style="color: red;background-color: rgba(255, 0, 0, 0.3);font-size: small;border-radius: 15px;">- 0.4%</span></div> </div></div>
         </div>
 
         
@@ -359,8 +366,8 @@
             <img src="{% static 'images/w2.jpg' %}" class="p-2" width="100" height="100" style="border-radius: 50px;bottom: 50px;position:relative;background-color: white;">
             <h5>Jenifer Lopez</h5>
         </div>
-        <div class="row">
-            <div class="col"><center><span style="font-weight: 500;">2,217</span> <br> <p style="color: gray;">Product</p></center></div>
+        <div class="row border-bottom">
+            <div class="col border-right"><center><span style="font-weight: 500;">2,217</span> <br> <p style="color: gray;">Product</p></center></div>
             <div class="col"><center><span style="font-weight: 500;">7.8K</span> <br> <p style="color: gray;">Followers</p></center></div>
         </div>
     </div>
@@ -371,8 +378,8 @@
 
     <!-- archive box -->
 <div class="row mt-3" id="archiveDiv"  >
-    <div id="archiveBox" class="col d-flex justify-content-center" style="border-radius: 50%;">
-        <i id="archiveIcon" class="fa-solid fa-box-archive fa-fade fa-xl" style="color: orangered;border: 1px solid orangered;border-radius: 50%;"></i>
+    <div id="archiveBox" class="col d-flex justify-content-center" >
+        <i id="archiveIcon" class="fa-solid fa-box-archive fa-fade fa-xl" style="color: orangered;"></i>
     </div>
 </div>
 
@@ -381,52 +388,65 @@
 
 <div class=" col-md justify-content-center  py-5" style="display: flex;flex-wrap: wrap;gap: 20px;justify-content: start;">
     <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
-        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+        
         <div class="card-body" >
+            <img class="card-img-top"  draggable="false" height="200" src="{% static 'images/red_hoodie.webp' %}" alt="Card image cap">
         <h5 class="card-title py-3 border-bottom " >&nbsp;Red Hoodie</h5>
-        <p class="card-text py-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="">Purchase</a> 
+        <p class="card-text pt-2">Rating : <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></p>
+        <p class="card-text pb-1" >Price &nbsp; : <span style="font-weight: 500;">$ 180</span></p>
+        <!-- <a href="#" class="">Purchase</a>  -->
         </div>
+        <center> <a href="#" class="btn my-3 w-50 " >Purchase</a> </center>
     </div>
     <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
-        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
         <div class="card-body">
+            <img class="card-img-top"  draggable="false" height="200" src="{% static 'images/blue-denim.jpg' %}" alt="Card image cap">
         <h5 class="card-title py-3 border-bottom ">&nbsp;Blue Denim Jacket</h5>
-        <p class="card-text py-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="">Purchase</a> 
+        <p class="card-text pt-2">Rating : <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></p>
+        <p class="card-text pb-1" >Price &nbsp; : <span style="font-weight: 500;">$ 230</span></p>
+        <!-- <a href="#" class="">Purchase</a>  -->
         </div>
+        <center> <a href="#" class="btn my-3 w-50 " >Purchase</a> </center>
     </div>
     <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
-        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
         <div class="card-body">
-        <h5 class="card-title py-3 border-bottom ">&nbsp;White Tank Top</h5>
-        <p class="card-text py-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="">Purchase</a> 
+            <img class="card-img-top"  draggable="false" height="200" src="{% static 'images/polo2.webp' %}" alt="Card image cap">
+        <h5 class="card-title py-3 border-bottom ">&nbsp;Polo T-shirts</h5>
+        <p class="card-text pt-2">Rating : <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></p>
+        <p class="card-text pb-1" >Price &nbsp; : <span style="font-weight: 500;">$ 80</span></p>
+        <!-- <a href="#" class="">Purchase</a>  -->
         </div>
+        <center> <a href="#" class="btn my-3 w-50 " >Purchase</a> </center>
     </div>
     <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
-        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
         <div class="card-body">
+            <img class="card-img-top"  draggable="false" height="200" src="{% static 'images/slipfit-pant.jpg' %}" alt="Card image cap">
         <h5 class="card-title py-3 border-bottom ">&nbsp;Slim Fit Pants</h5>
-        <p class="card-text py-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="">Purchase</a> 
+        <p class="card-text pt-2">Rating : <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></p>
+        <p class="card-text pb-1" >Price &nbsp; : <span style="font-weight: 500;">$ 140</span></p>
+        <!-- <a href="#" class="">Purchase</a>  -->
         </div>
+        <center> <a href="#" class="btn my-3 w-50 " >Purchase</a> </center>
     </div>
     <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
-        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
         <div class="card-body">
+            <img class="card-img-top"  draggable="false" height="200" src="{% static 'images/nike.webp' %}" alt="Card image cap">
         <h5 class="card-title py-3 border-bottom ">&nbsp;Nike Jordans</h5>
-        <p class="card-text py-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="">Purchase</a> 
+        <p class="card-text pt-2">Rating : <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
+        <p class="card-text pb-1" >Price &nbsp; : <span style="font-weight: 500;">$ 280</span></p>
+        <!-- <a href="#" class="">Purchase</a>  -->
         </div>
+        <center> <a href="#" class="btn my-3 w-50 " >Purchase</a> </center>
     </div>
     <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
-        <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
         <div class="card-body">
-        <h5 class="card-title py-3 border-bottom ">&nbsp;Green Flip Flops</h5>
-        <p class="card-text py-2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="">Purchase</a> 
+            <img class="card-img-top"  draggable="false" height="200" src="{% static 'images/blazer2.jpg' %}" alt="Card image cap">
+        <h5 class="card-title py-3 border-bottom ">&nbsp;Blazers</h5>
+        <p class="card-text pt-2">Rating : <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></p>
+        <p class="card-text pb-1" >Price &nbsp; : <span style="font-weight: 500;">$ 570</span></p>
+        <!-- <a href="#" class="btn btn-success">Purchase</a>  -->
         </div>
+        <center> <a href="#" class="btn my-3 w-50 " >Purchase</a> </center>
     </div>
     
 </div>
