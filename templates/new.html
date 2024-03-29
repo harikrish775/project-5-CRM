@@ -4,7 +4,9 @@
 
 <style>
     body{
-        background-color:rgb(255, 255, 255);
+        /* background-color:  white; */
+        background-color: rgba(30, 255, 229, 0.2);
+        
     }
     
     .row{
@@ -39,6 +41,9 @@
     } */
 
     #Connect a:hover i{
+        color: rgba(128, 128, 128, 0.667);
+    }
+    #Connect2 a:hover i{
         color: rgba(128, 128, 128, 0.667);
     }
     .btn:hover{
@@ -127,26 +132,93 @@
    }
    
 
+   @media (max-width: 768px) {
+    #pro2{
+        margin-top: 150px;
+    }
+    #pro3{
+        margin-top: -220px;
+    }
+    #pro1{
+        margin-top: -70px;
+    }
+    #proRow{
+        margin-bottom: -200px;
+    }
+    #BottomDiv{
+        border-top-left-radius: 250px;
+        border-top-right-radius: 250px;
+        margin-top: 30px;
+    }    
+    #upperDiv{
+        border-bottom-left-radius:250px;
+        border-bottom-right-radius:250px;
+    } 
+    #Connect2{
+        display: none;
+    }  
+    #Connect{
+        display: block;
+    }
+    }
 
+
+
+    @media(min-width : 768px){
+    #proRow{
+        max-height: 350px;
+    }
+    #BottomDiv{
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        
+    }
+    #upperDiv{
+        border-bottom-left-radius:50%;
+        border-bottom-right-radius:50%;
+    }
+    #pro1{
+        margin-right: -180px;
+        
+    }
+    #pro3{
+        margin-left: -180px;
+    }
+    #Connect{
+        display: none;
+    }
+    #Connect2{
+        display: block;
+    }
+    
+    }
+
+    .featureCard{
+        border-radius: 10px;
+        box-shadow: 1px 3px 4px 2px rgb(23, 200, 240);
+        background-color: rgb(188, 248, 241);
+        
+    }
+
+    
     
     
 </style>
 
-<div class="py-5" style="background-color: rgba(127, 255, 212, 0.5);border-bottom-left-radius: 50%;border-bottom-right-radius: 50%;">
+<div class="py-5" id="upperDiv" style="background-color: rgba(77, 247, 190, 0.5);box-shadow: 0px 2px 9px 1px rgba(128, 128, 128, 0.553)">
     <div>
         <center>
-            <h1 class="mt-5 " >Crafting Expiriences, </h1>
-            <h2 class="mb-3">Building Relationships.</h2>
+            <h1 class="mt-5 display-3 " style="font-weight: 400;" >Crafting Expiriences, </h1>
+            <h2 class="mb-3 display-4">Building Relationships.</h2>
             <p class="mb-4">Logo solutions are designed to elevate your business by seamlessly integrating <br> customer data, streamlining process, and enhacing overall engagement. </p>
-            <button class="btn mb-5" style="background-color:rgb(8, 160, 145) ;color: white;text-shadow: 1px 1px black;">Start Today</button>
+            <button class="btn mb-5 py-2 px-4" style="background-color:rgb(8, 160, 145) ;color: white;text-shadow: 1px 1px black;">Start Today</button>
         </center>
     </div>
 </div>
 
-<div class="row py-5 mx-5" style="display: flex;flex-wrap: wrap;gap: 20px;justify-content: space-around;max-height: 300px;">
-    
-    <div class="col-md pt-3" style="max-height: 250px;">
-        
+<div class="row py-5 mx-5" id="proRow" style="display: flex;flex-wrap: wrap;gap: 20px;justify-content: space-around;">
+    <div class="col-md-1"></div>
+    <div class="col-md pt-3" id="pro1" >        
         <center style="height: 20px;">
             <h6 class="mt-5 mb-2" style="color: gray;">Customers</h6>
             <div class="skill">
@@ -164,16 +236,11 @@
                    </linearGradient>
                 </defs>
                 <circle id="circle1" cx="80" cy="80" r="70" stroke-linecap="round" />
-            </svg> 
-            
-        </center>            
-        <!-- <div class="card-body">
-        <h5 class="card-title">Title 1</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div> -->
+            </svg>             
+        </center>
     </div>
 
-    <div class="col-md pt-3" style="max-height: 10%;">
+    <div class="col-md pt-3" id="pro2" >
         <center>
             <h6 class="mt-2 mb-2" style="color: gray;">Revenue</h6>
             <div class="skill">
@@ -182,8 +249,7 @@
                         <div id="number">80%</div>
                     </div>
                 </div>
-            </div>    
-            
+            </div>
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
                 <defs>
                    <linearGradient id="GradientColor">
@@ -192,17 +258,11 @@
                    </linearGradient>
                 </defs>
                 <circle id="circle2" cx="80" cy="80" r="70" stroke-linecap="round" />
-            </svg> 
-            
-        </center>
-        
-        <!-- <div class="card-body">
-        <h5 class="card-title">Title 2</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div> -->
+            </svg>             
+        </center>        
     </div>
 
-    <div class="col-md pt-3" >
+    <div class="col-md pt-3" id="pro3" >
         <center>
             <h6 class="mt-5 mb-2" style="color: gray;">Orders</h6>
             <div class="skill" >
@@ -222,93 +282,125 @@
                 <circle id="circle3" cx="80" cy="80" r="70" stroke-linecap="round" />
             </svg> 
         </center>
-        <!-- <div class="card-body" style="height: 20px;">
-        <h5 class="card-title">Title 3</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div> -->
     </div>
+    <div class="col-md-1 " id="Connect2">
+        <div id="connectHead2" class="vertical-text">
+            <h5>
+                <span>C</span>
+                <span>O</span>
+                <span>N</span>
+                <span>N</span>
+                <span>E</span>
+                <span>C</span>
+                <span>T</span>
+            </h5>
+        </div>
+        <div class="mt-5 ml-4"><a style="color: black;" href=""><i class="fa-brands fa-facebook fa-2xl"></i></a></div>
+        <div class="mt-5 ml-4"><a style="color: black;" href=""><i class="fa-brands fa-whatsapp fa-2xl"></i></a></div>
+        <div class="mt-5 ml-4"><a style="color: black;" href=""><i class="fa-brands fa-twitter fa-2xl"></i></a></div>
+        <div class="mt-5 ml-4"><a style="color: black;" href=""><i class="fa-brands fa-instagram fa-2xl"></i></a></div>
+</div>
     
 </div>
+
+
+    <!-- jumbotron -->
+    <div class="row mb-5">
+        <div class="col-md-2"></div>
+        <div class="col-md-3"><img src="{% static 'images/pic1.webp' %}" alt="" style="height: 15rem;width: 20rem;box-shadow: 0px 8px 15px rgba(127, 255, 212, 0.8);border-radius: 10px;"></div>
+        <div class="col">
+           <h1 class="display-4">Boost Your Business.</h1>
+          <p class="lead">With our efficient and organised ways, manage your business easily.</p>
+        </div>
+    </div>
+
+
+<!-- bottom curved div start-->
+<div class="py-5" id="BottomDiv" style="min-height: 30vh;background-color: rgba(77, 247, 190, 0.5);box-shadow: 0px -4px 9px -1px rgba(128, 128, 128, 0.553)">
+    <br><br>
 
 <!-- buttons -->
 <div class="row d-flex my-5" >
     <div class="col-md-3"></div>
-    <div class="col-md-6" style="justify-content: center;display: flex;"><button class="btn mx-1 px-5" style="background-color:rgb(8, 160, 145) ;color: white;text-shadow: 1px 1px black;border-radius: 25px;">Get Started</button> <button class="btn mx-1 px-5" style="background-color:rgb(8, 160, 145) ;color: white;text-shadow: 1px 1px black;border-radius: 25px;">Register</button></div>
+    <div class="col-md-6" style="justify-content: center;display: flex;"><button class="btn mx-1 px-5 py-3" style="background-color:rgb(8, 160, 145) ;color: white;text-shadow: 1px 1px black;border-radius: 5px;">Get Started</button> <button class="btn mx-1 px-5" style="background-color:rgb(8, 160, 145) ;color: white;text-shadow: 1px 1px black;border-radius: 5px;">Register</button></div>
     <div class="col-md-3"></div>
 </div>
 <br>
 
-
-
-
-<!-- curved div -->
-<div class="py-5" style="min-height: 30vh;background-color: rgba(127, 255, 212, 0.5);border-top-left-radius: 50%;border-top-right-radius: 50%">
-    <br><br>
-
-
-<!-- jumbotron -->
-<div class="row my-5">
-    <div class="col-md-2"></div>
-    <div class="col-md-3"><img src="{% static 'images/.png' %}" alt="" style="height: 15rem;width: 20rem;box-shadow: 0px 8px 15px rgba(127, 255, 212, 0.8);border-radius: 10px;"></div>
+<!-- feature jumbotron -->
+<div class="row">
+    
+    <div class="col-md-1"></div>
     <div class="col">
-       <h1 class="display-4">Boost Your Business.</h1>
-      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+       <h1 class="display-4 ml-3 mb-5">Features that you desire.</h1>
+       
+       <div class="row mb-3">
+        <div class="col-sm-6 mb-3 ">
+          <div class="card featureCard">
+            <div class="card-body">
+              <h5 class="card-title">Enable Automation</h5>
+              <p class="card-text">Automate lead creation, team assignment, scheduled activities, and focus on what really matters.</p>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 ">
+          <div class="card featureCard">
+            <div class="card-body">
+              <h5 class="card-title">AI lead scoring</h5>
+              <p class="card-text">Too many leads? Our AI scores leads to ensure you always work on the right priorities.</p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6 mb-3 ">
+          <div class="card featureCard">
+            <div class="card-body">
+              <h5 class="card-title">Manage leads</h5>
+              <p class="card-text">Create, acquire, import, nurture, score, etc. Manage all aspects of your leads in a single place.</p>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 ">
+          <div class="card featureCard">
+            <div class="card-body">
+              <h5 class="card-title">Reduce manual entry</h5>
+              <p class="card-text">Send quotes in just a few clicks, manage your pipeline by drag-and-dropping, and more.</p>
+              
+            </div>
+          </div>
+        </div>
+      </div>      
+      
     </div>
+    <div class="col-md-1"></div>
 </div>
 
-
+<div class="row my-5">
+    <div class="col-md"></div>
+    <div class="col"><img src="{% static 'images/icon1.svg' %}" alt=""> <h6>Sales</h6></div>
+    <div class="col"><img src="{% static 'images/icon2.svg' %}" alt=""> <h6>Subscrptions</h6></div>
+    <div class="col"><img src="{% static 'images/icon3.svg' %}" alt=""> <h6>Email Marketing</h6></div>
+    <div class="col"><img src="{% static 'images/icon4.svg' %}" alt=""> <h6>Events</h6></div>
+    <div class="col-md"></div>
+</div>
 
 <!-- cards -->
 <div class="row my-3" >
 <div class="col-md-2"></div>
 <div class=" col-md-8 justify-content-center  py-5" style="display: flex;flex-wrap: wrap;gap: 20px;justify-content: start;">
-    <!-- <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
-        <div class="card-body">
-        <h5 class="card-title">Card 1</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
-    <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
-        <div class="card-body">
-        <h5 class="card-title">Card 2</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
-    <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
-        <div class="card-body">
-        <h5 class="card-title">Card 3</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
-    <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
-        <div class="card-body">
-        <h5 class="card-title">Card 4</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
-    <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
-        <div class="card-body">
-        <h5 class="card-title">Card 5</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div>
-    <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
-        <div class="card-body">
-        <h5 class="card-title">Card 6</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-    </div> -->
+    
+
     
 </div>
 <div class="col-md-1"></div>
-<div class="col-md-1 " style="display:block;" id="Connect">
-        <div id="connectHead" class="vertical-text">
+
+<div class="col-md-1 " id="Connect">
+        <div id="connectHead" >
             <h5>
                 <span>C</span>
                 <span>O</span>
@@ -340,7 +432,7 @@
 </div> -->
 
 </div>
-<!-- arc div end (close div above)-->
+<!-- bottom curved div end -->
 
 <!-- footer -->
 <div class="row" id="footer">
@@ -383,143 +475,28 @@
 
 
 <script>
-    // let cards = document.getElementsByClassName('cardbox');
-    // let archiveBox = document.getElementById('archiveBox')
-    // let archiveDiv = document.getElementById('archiveDiv')
-    // for(let card of cards){
-    //     card.addEventListener("dragstart",function(e){
-    //         archiveDiv.style.display = 'block';
-    //         archiveDiv.style.opacity = '1';
-    //         let selected = e.target;
-
-            
-    //         archiveBox.addEventListener("dragover",function(e){
-    //             e.preventDefault();
-    //         });
-
-    //         // Add dragend event handler to reset selected card
-    //         card.addEventListener("dragend", function(e) {
-    //             archiveDiv.style.display = 'none';
-    //             selected = null;
-    //         });
-
-    //         archiveBox.addEventListener("drop",function(e){
-    //             // archiveBox.appendChild(selected);
-                
-
-    //             // aaaa
-    //             selected.style.display = 'none';
-    //             archiveDiv.style.display = 'none';
-    //             alert('successfull archived')
-    //             selected = null;
-    //         })
-
-    //     })
-    // }
-
-
-    let cards = document.getElementsByClassName('cardbox');
-    let archiveBox = document.getElementById('archiveBox');
-    let archiveDiv = document.getElementById('archiveDiv');
-
-    // Load archived cards from local storage
-    let archivedCards = JSON.parse(localStorage.getItem('archivedCards')) || [];
-
-    // Function to save archived cards to local storage
-    function saveToLocalStorage() {
-        localStorage.setItem('archivedCards', JSON.stringify(archivedCards));
-    }
-
-    // Function to handle dropping a card into the archive box
-    function handleDrop(selectedCard) {
-        selectedCard.style.display = 'none';
-        archiveDiv.style.display = 'none';
-        archivedCards.push(selectedCard.innerHTML); // Save card HTML content
-        saveToLocalStorage(); // Save to local storage
-        alert('Successfully archived');
-    }
-
-    for (let card of cards) {
-        card.addEventListener("dragstart", function(e) {
-            archiveDiv.style.display = 'block';
-            archiveDiv.style.opacity = '1';
-            let selected = e.target;
-
-            archiveBox.addEventListener("dragover", function(e) {
-                e.preventDefault();
-            });
-
-            card.addEventListener("dragend", function(e) {
-                archiveDiv.style.display = 'none';
-                selected = null;
-            });
-
-            archiveBox.addEventListener("drop", function(e) {
-                e.preventDefault();
-                handleDrop(selected);
-            });
-        });
-    }
-
-    function hideArchivedCards() {
-    // Load archived cards from local storage
-    let archivedCards = JSON.parse(localStorage.getItem('archivedCards')) || [];
-    
-    // Iterate through each card
-    for (let card of cards) {
-        // Check if the card's inner HTML content is in the archived cards
-        if (archivedCards.includes(card.innerHTML)) {
-            card.style.display = 'none'; // Hide the card if it's archived
-        }
-    }
-}
-
-// Call the function to hide archived cards when the page loads
-window.addEventListener('load', hideArchivedCards);
-
-
-
-
-
-
-    
-   // dragover archivebox style
-
-   let archiveIcon = document.getElementById('archiveIcon');
-
-    archiveBox.addEventListener('dragover', function(event) {
-        event.preventDefault(); // Prevent default behavior
-        archiveBox.classList.add('dragover'); // Add 'dragover' class
-        
-    });
-
-    archiveBox.addEventListener('dragleave', function(event) {
-        archiveBox.classList.remove('dragover'); // Remove 'dragover' class when leaving
-        
-    });
-
-    archiveBox.addEventListener('drop', function(event) {
-        archiveBox.classList.remove('dragover'); // Remove 'dragover' class when leaving
-        
-    });
-
-
     // Function to add or remove vertical-text class based on screen size
-    function toggleVerticalTextClass() {
+    document.addEventListener("DOMContentLoaded", function() {
+        function toggleVerticalTextClass() {
         var textContainer = document.getElementById("connectHead");
+        console.log('working')
         if (window.innerWidth > 578) {
-            textContainer.classList.add("vertical-text"); // Add vertical-text class for normal size screens
+            console.log('2working')
+            textContainer.classList.add("vertical-text"); 
         } else {
-            textContainer.classList.remove("vertical-text"); // Remove vertical-text class for smaller screens
+            console.log('3working')
+            textContainer.classList.remove("vertical-text"); 
         }
     }
 
-    // Call the function initially to set the correct class based on screen size
-    toggleVerticalTextClass();
-
-    // Add event listener for window resize to toggle the class dynamically
+        toggleVerticalTextClass();
+   
     window.addEventListener("resize", toggleVerticalTextClass);
 
+    
+});
+
+   
     
 </script>
 

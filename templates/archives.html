@@ -11,12 +11,14 @@
         /* background-color: #ff6385; */
         background-color: rgb(195, 250, 232);
         border-radius: 5px;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
     }
     .cardbox{
         /* border-radius: 15px; */
         box-shadow: 2px 3px 3px grey;
         padding: 5px;
-        background-color: #82f9f9;
+        background-color: rgba(128, 128, 128, 0.646);
         
         /* background-color: rgba(20, 188, 168, 0.2); */
     }
@@ -90,7 +92,7 @@
             removeButton.addEventListener('click', function() {
                 // Call removeCard function with the corresponding index
                 removeCard(index);
-                alert('Unarchived !')
+                
                 // Remove the card from the DOM
                 cardDiv.remove();
             });

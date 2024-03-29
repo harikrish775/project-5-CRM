@@ -75,21 +75,28 @@
     cursor: pointer; /* Change cursor on hover */
 }
 
+@media (max-width: 768px) {
+    #ul{
+        padding-top: 80px;
+    }
+    
+    }
+
     
 </style>
 <body>
     <div class="container-fluid">
         <div class="row">
             <!-- Collapse Button -->
-            <button style="z-index: 101;" class="btn btn-primary d-md-none" type="button" data-toggle="collapse" data-target="#sidebarCollapse" aria-expanded="false" aria-controls="sidebarCollapse">
-                <span class="navbar-toggler-icon" style="z-index: 101;"></span>
-            </button><br><br>
+            <button style="z-index: 101;background-color: transparent;position: fixed;" class="btn d-md-none" type="button" data-toggle="collapse" data-target="#sidebarCollapse" aria-expanded="false" aria-controls="sidebarCollapse">
+                <span class="" style="z-index: 101;"><i class="fa-solid fa-bars"></i></span>
+            </button>
     
             <!-- Sidebar Column -->
             <div class="col-md-2 collapse d-md-block" id="sidebarCollapse" style="z-index: 100;">
                 <div class="sidebar" style="background-color: rgba(44, 194, 217, 0.872);">
-                    <ul class="nav flex-column nv bcolor">
-                        <li class="nav-item px-3 my-3" style="margin-top: 20px;">
+                    <ul class="nav flex-column nv bcolor" id="ul">
+                        <li class="nav-item px-3 my-3" style="background-color: white;">
                             <a style="text-decoration: none;" href="{% url 'landing_page' %}"><img src="{% static 'images/logoo.png' %}" alt="logo" height="30"></a>   
                         </li>
                         <li class="nav-item px-3">

@@ -12,13 +12,13 @@
         background-color: whitesmoke;
         /* background-color: rgb(195, 250, 232); */
         border-radius: 5px;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
     }
     .cardbox{
         /* border-radius: 15px; */
         box-shadow: 2px 3px 3px grey;
         padding: 5px;
-        background-color: #82f9f9;
-        
         /* background-color: rgba(20, 188, 168, 0.2); */
     }
     
@@ -28,14 +28,15 @@
     }
     .cardbox a {
         text-decoration: none;
-        color: white;
-        background-color: rgb(71, 71, 239);
+        color: black;
+        text-shadow: 1px 1px black;
+        background-color: transparent;
     }
     .cardbox a:hover{
         
         text-transform: uppercase;
-        box-shadow: 1px 2px 4px pink;
         font-weight: 500;
+        color: black;
         
     }
 
@@ -155,6 +156,66 @@
   clip-path: polygon(50% 50%, 50% 0%, 0% 0%);
   background-color: #ffce56; /* Yellow */
   transform: rotate(240deg);
+}
+
+/* semicircle */
+
+@keyframes progress {
+  0% { --percentage: 0; }
+  100% { --percentage: var(--value); }
+}
+
+@property --percentage {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+.progress-container {
+  width: var(--size);
+  max-width: 100%; /* Ensure it doesn't exceed the parent container */
+  height: var(--size);
+  max-height: var(--size);/* Ensure it doesn't exceed the specified size */
+}
+
+[role="progressbar"] {
+
+  --percentage: var(--value);
+  --primary: #369;
+  --secondary: #adf;
+  --size: 100px;
+  animation: progress 2s 0.5s forwards;
+  width: 65%; /* Take up the full width of the container */
+  aspect-ratio: 2 / 1;
+  border-radius: 50% / 100% 100% 0 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-left: 50px;
+}
+
+[role="progressbar"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: conic-gradient(from 0.75turn at 50% 100%, var(--primary) calc(var(--percentage) * 1% / 2), var(--secondary) calc(var(--percentage) * 1% / 2 + 0.1%));
+  mask: radial-gradient(at 50% 100%, white 55%, transparent 55.5%);
+  mask-mode: alpha;
+  -webkit-mask: radial-gradient(at 50% 100%, #0000 55%, #000 55.5%);
+  -webkit-mask-mode: alpha;
+}
+
+[role="progressbar"]::after {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) '%';
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
+  color: var(--primary);
 }
 
 
@@ -369,6 +430,47 @@
             <div class="col border-right"><center><span style="font-weight: 500;">2,217</span> <br> <p style="color: gray;">Product</p></center></div>
             <div class="col"><center><span style="font-weight: 500;">7.8K</span> <br> <p style="color: gray;">Followers</p></center></div>
         </div>
+        <div class="row  m-2" >
+            <label for="" style="font-weight: 500;">Earnings </label>
+            <span style="display: flex; justify-content: flex-end; align-items: center; color: gray;">
+                <!-- <i class="fa-solid fa-circle-info"></i> -->
+            </span>             
+        </div>
+        <div class="row">
+            <div role="progressbar" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100" style="--value: 89"></div>
+        </div>
+        <div class="row pb-3" style="display: flex;justify-content: center;">
+            <div style="width: 100%;display: flex;justify-content: center;"><h5>$ 34,342</h5></div>
+            
+            <div style="width: 100%;display: flex;justify-content: center;"><h6 style="color: gray;">Earning this month.</h6></div>
+        </div>
+        <div class="row border-bottom pb-4">
+            <p class="ml-4" style="color: green;background-color: lightgreen;border-radius: 15px;padding: 2px;font-size: small;">+3.77%</p><p style="color: gray;">&nbsp; From previous period</p>
+        </div>
+        <div class="row">
+            <h6 class="ml-4 my-4">Recent Activity</h6>
+        </div>
+        <div class="row mb-5">            
+            <a class="btn w-25 mx-3 disabled" style="border-radius: 5px;background-color: rgb(195, 193, 193);color: black;font-weight: 500;">17 <br> Sep </a>
+            Respond to need <br> "Volunteer activities"
+        </div>
+        <div class="row mb-5">            
+            <a class="btn w-25 mx-3 disabled" style="border-radius: 5px;background-color: rgb(195, 193, 193);color: black;font-weight: 500;">16 <br> Sep </a>
+            Everyone realizes <br> would be desirable... 
+        </div>
+        <div class="row mb-5">            
+            <a class="btn w-25 mx-3 disabled" style="border-radius: 5px;background-color: rgb(195, 193, 193);color: black;font-weight: 500;">15 <br> Sep </a>
+            Joined the group <br> “Boardsmanship Forum”
+        </div>
+        <div class="row mb-5">            
+            <a class="btn w-25 mx-3 disabled" style="border-radius: 5px;background-color: rgb(195, 193, 193);color: black;font-weight: 500;">14 <br> Sep </a>
+            Respond to need <br> "Volunteer activities"
+        </div>
+        
+        <div class="row ">            
+            <a href="" class="ml-5" >Loading More...<i class="fa-solid fa-arrow-rotate-right fa-spin"></i></a> 
+            
+        </div>
     </div>
 </div>
 
@@ -386,67 +488,94 @@
 <div class="row my-3" >
 
 <div class=" col-md justify-content-center  py-5" style="display: flex;flex-wrap: wrap;gap: 20px;justify-content: start;">
-    <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
+
+    <div >
+        <div class="card draggable cardbox" style="width: 17rem;background-color: rgb(168, 255, 168);" draggable="true">  
+            <center><div class="mt-5" ><h1>$ 0.<span style="font-size: large;">00</span></h1><h4 class="card-title py-3 justify-content-center d-flex" >&nbsp;Free Trial</h4></div></center>      
+            <div class="card-body" style="margin-top: 20px;background-color: rgba(255, 255, 255, 0.628);" >
+            <h6 class="card-title py-1 justify-content-center d-flex" style="color: gray;" >&nbsp;2 Trophies</h6>
+            <h6 class="card-title py-1 justify-content-center d-flex" style="color: gray;" >&nbsp;Extra Benefits</h6>
+            <h6 class="card-title py-1 justify-content-center d-flex" style="color: gray;" >&nbsp;Valid for 7 Days</h6>
+            <!-- <p class="card-text pt-2">Rating : <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></p> -->
+            <!-- <p class="card-text pb-1" >Price &nbsp; : <span style="font-weight: 500;">$ 180</span></p> -->
+            <!-- <a href="#" class="">Purchase</a>  -->
+            </div>
+            <center> <a href="#" class="btn p-3 w-100 " >Purchase</a> </center>
+        </div>
+    </div>
+
+    <div >
+        <div class="card draggable cardbox" style="width: 17rem;background-color: rgb(168, 255, 249);" draggable="true">  
+            <center><div class="mt-5" ><h1>$ 24.<span style="font-size: large;">00 / <small>month</small></span></h1><h4 class="card-title py-3 justify-content-center d-flex" >&nbsp;Basic.</h4></div></center>      
+            <div class="card-body" style="margin-top: 20px;background-color: rgba(255, 255, 255, 0.628);" >
+            <h6 class="card-title py-1 justify-content-center d-flex" style="color: gray;" >&nbsp;5 Trophies</h6>
+            <h6 class="card-title py-1 justify-content-center d-flex" style="color: gray;" >&nbsp;Extra Benefits</h6>
+            <h6 class="card-title py-1 justify-content-center d-flex" style="color: gray;" >&nbsp;Valid for 1 month</h6>
+            <!-- <p class="card-text pt-2">Rating : <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></p> -->
+            <!-- <p class="card-text pb-1" >Price &nbsp; : <span style="font-weight: 500;">$ 180</span></p> -->
+            <!-- <a href="#" class="">Purchase</a>  -->
+            </div>
+            <center> <a href="#" class="btn p-3 w-100 " >Purchase</a> </center>
+        </div>
+    </div>
+
+    <div >
+        <div class="card draggable cardbox" style="width: 17rem;background-color: rgb(86, 145, 255);" draggable="true">  
+            <center><div class="mt-5" ><h1>$ 18.<span style="font-size: large;">00 / <small>month</small></span></h1><h4 class="card-title py-3 justify-content-center d-flex" >&nbsp;Standard.</h4></div></center>      
+            <div class="card-body" style="margin-top: 20px;background-color: rgba(255, 255, 255, 0.628);" >
+            <h6 class="card-title py-1 justify-content-center d-flex" style="color: gray;" >&nbsp;10 Trophies</h6>
+            <h6 class="card-title py-1 justify-content-center d-flex" style="color: gray;" >&nbsp;Extra Benefits</h6>
+            <h6 class="card-title py-1 justify-content-center d-flex" style="color: gray;" >&nbsp;Valid for 3 month</h6>
+            <!-- <p class="card-text pt-2">Rating : <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></p> -->
+            <!-- <p class="card-text pb-1" >Price &nbsp; : <span style="font-weight: 500;">$ 180</span></p> -->
+            <!-- <a href="#" class="">Purchase</a>  -->
+            </div>
+            <center> <a href="#" class="btn p-3 w-100 " >Purchase</a> </center>
+        </div>
+    </div>
+
+    <!-- <div >
+        <div class="card draggable cardbox" style="width: 17rem;background-color: rgb(246, 188, 62);" draggable="true">  
+            <center><div class="mt-5" ><h1>$ 15.<span style="font-size: large;">00 / <small>month</small></span></h1><h4 class="card-title py-3 justify-content-center d-flex" >&nbsp;Deluxe.</h4></div></center>      
+            <div class="card-body" style="margin-top: 20px;background-color: rgba(255, 255, 255, 0.628);" >
+            <h6 class="card-title py-1 justify-content-center d-flex" style="color: gray;" >&nbsp;13 Trophies</h6>
+            <h6 class="card-title py-1 justify-content-center d-flex" style="color: gray;" >&nbsp;Extra Benefits</h6>
+            <h6 class="card-title py-1 justify-content-center d-flex" style="color: gray;" >&nbsp;Valid for 5 month</h6>
+            
+            </div>
+            <center> <a href="#" class="btn p-3 w-100 " >Purchase</a> </center>
+        </div>
+    </div> -->
+
+    <div >
+        <div class="card draggable cardbox" style="width: 17rem;background-color: rgb(141, 119, 255);" draggable="true">  
+            <center><div class="mt-5" ><h1>$ 14.<span style="font-size: large;">00 / <small>month</small></span></h1><h4 class="card-title py-3 justify-content-center d-flex" >&nbsp;Premium.</h4></div></center>      
+            <div class="card-body" style="margin-top: 20px;background-color: rgba(255, 255, 255, 0.628);" >
+            <h6 class="card-title py-1 justify-content-center d-flex" style="color: gray;" >&nbsp;17 Trophies</h6>
+            <h6 class="card-title py-1 justify-content-center d-flex" style="color: gray;" >&nbsp;Extra Benefits</h6>
+            <h6 class="card-title py-1 justify-content-center d-flex" style="color: gray;" >&nbsp;Valid for 8 month</h6>
+            <!-- <p class="card-text pt-2">Rating : <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></p> -->
+            <!-- <p class="card-text pb-1" >Price &nbsp; : <span style="font-weight: 500;">$ 180</span></p> -->
+            <!-- <a href="#" class="">Purchase</a>  -->
+            </div>
+            <center> <a href="#" class="btn p-3 w-100 " >Purchase</a> </center>
+        </div>
+    </div>
+
+
+
+    
+
+    <!-- <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
+        <div class="card-body">
         
-        <div class="card-body" >
-            <img class="card-img-top"  draggable="false" height="200" src="{% static 'images/red_hoodie.webp' %}" alt="Card image cap">
-        <h5 class="card-title py-3 border-bottom " >&nbsp;Red Hoodie</h5>
-        <p class="card-text pt-2">Rating : <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></p>
-        <p class="card-text pb-1" >Price &nbsp; : <span style="font-weight: 500;">$ 180</span></p>
-        <!-- <a href="#" class="">Purchase</a>  -->
-        </div>
-        <center> <a href="#" class="btn my-3 w-50 " >Purchase</a> </center>
-    </div>
-    <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
-        <div class="card-body">
-            <img class="card-img-top"  draggable="false" height="200" src="{% static 'images/blue-denim.jpg' %}" alt="Card image cap">
-        <h5 class="card-title py-3 border-bottom ">&nbsp;Blue Denim Jacket</h5>
-        <p class="card-text pt-2">Rating : <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></p>
-        <p class="card-text pb-1" >Price &nbsp; : <span style="font-weight: 500;">$ 230</span></p>
-        <!-- <a href="#" class="">Purchase</a>  -->
-        </div>
-        <center> <a href="#" class="btn my-3 w-50 " >Purchase</a> </center>
-    </div>
-    <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
-        <div class="card-body">
-            <img class="card-img-top"  draggable="false" height="200" src="{% static 'images/polo2.webp' %}" alt="Card image cap">
-        <h5 class="card-title py-3 border-bottom ">&nbsp;Polo T-shirts</h5>
-        <p class="card-text pt-2">Rating : <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></p>
-        <p class="card-text pb-1" >Price &nbsp; : <span style="font-weight: 500;">$ 80</span></p>
-        <!-- <a href="#" class="">Purchase</a>  -->
-        </div>
-        <center> <a href="#" class="btn my-3 w-50 " >Purchase</a> </center>
-    </div>
-    <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
-        <div class="card-body">
-            <img class="card-img-top"  draggable="false" height="200" src="{% static 'images/slipfit-pant.jpg' %}" alt="Card image cap">
-        <h5 class="card-title py-3 border-bottom ">&nbsp;Slim Fit Pants</h5>
-        <p class="card-text pt-2">Rating : <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></p>
-        <p class="card-text pb-1" >Price &nbsp; : <span style="font-weight: 500;">$ 140</span></p>
-        <!-- <a href="#" class="">Purchase</a>  -->
-        </div>
-        <center> <a href="#" class="btn my-3 w-50 " >Purchase</a> </center>
-    </div>
-    <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
-        <div class="card-body">
-            <img class="card-img-top"  draggable="false" height="200" src="{% static 'images/nike.webp' %}" alt="Card image cap">
-        <h5 class="card-title py-3 border-bottom ">&nbsp;Nike Jordans</h5>
-        <p class="card-text pt-2">Rating : <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></p>
-        <p class="card-text pb-1" >Price &nbsp; : <span style="font-weight: 500;">$ 280</span></p>
-        <!-- <a href="#" class="">Purchase</a>  -->
-        </div>
-        <center> <a href="#" class="btn my-3 w-50 " >Purchase</a> </center>
-    </div>
-    <div class="card draggable cardbox" style="width: 18rem;" draggable="true">
-        <div class="card-body">
-            <img class="card-img-top"  draggable="false" height="200" src="{% static 'images/blazer2.jpg' %}" alt="Card image cap">
         <h5 class="card-title py-3 border-bottom ">&nbsp;Blazers</h5>
         <p class="card-text pt-2">Rating : <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></p>
         <p class="card-text pb-1" >Price &nbsp; : <span style="font-weight: 500;">$ 570</span></p>
-        <!-- <a href="#" class="btn btn-success">Purchase</a>  -->
+        <a href="#" class="btn btn-success">Purchase</a> 
         </div>
         <center> <a href="#" class="btn my-3 w-50 " >Purchase</a> </center>
-    </div>
+    </div> -->
     
 </div>
 
@@ -509,7 +638,7 @@
         archiveDiv.style.display = 'none';
         archivedCards.push(selectedCard.innerHTML); // Save card HTML content
         saveToLocalStorage(); // Save to local storage
-        alert('Successfully archived');
+        
     }
 
     for (let card of cards) {
