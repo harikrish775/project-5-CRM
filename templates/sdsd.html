@@ -241,3 +241,134 @@
     
 </body>
 </html>
+
+
+
+
+<!-- archive for cards -->
+<script>
+    // let cards = document.getElementsByClassName('cardbox');
+    // let archiveBox = document.getElementById('archiveBox')
+    // let archiveDiv = document.getElementById('archiveDiv')
+    // for(let card of cards){
+    //     card.addEventListener("dragstart",function(e){
+    //         archiveDiv.style.display = 'block';
+    //         archiveDiv.style.opacity = '1';
+    //         let selected = e.target;
+
+            
+    //         archiveBox.addEventListener("dragover",function(e){
+    //             e.preventDefault();
+    //         });
+
+    //         // Add dragend event handler to reset selected card
+    //         card.addEventListener("dragend", function(e) {
+    //             archiveDiv.style.display = 'none';
+    //             selected = null;
+    //         });
+
+    //         archiveBox.addEventListener("drop",function(e){
+    //             // archiveBox.appendChild(selected);
+                
+
+    //             // aaaa
+    //             selected.style.display = 'none';
+    //             archiveDiv.style.display = 'none';
+    //             alert('successfull archived')
+    //             selected = null;
+    //         })
+
+    //     })
+    // }
+
+
+    let cards = document.getElementsByClassName('cardbox');
+    let archiveBox = document.getElementById('archiveBox');
+    let archiveDiv = document.getElementById('archiveDiv');
+
+    // Load archived cards from local storage
+    let archivedCards = JSON.parse(localStorage.getItem('archivedCards')) || [];
+
+    // Function to save archived cards to local storage
+    function saveToLocalStorage() {
+        localStorage.setItem('archivedCards', JSON.stringify(archivedCards));
+    }
+
+    // Function to handle dropping a card into the archive box
+    function handleDrop(selectedCard) {
+        selectedCard.style.display = 'none';
+        archiveDiv.style.display = 'none';
+        archivedCards.push(selectedCard.innerHTML); // Save card HTML content
+        saveToLocalStorage(); // Save to local storage
+        
+    }
+
+    for (let card of cards) {
+        card.addEventListener("dragstart", function(e) {
+            archiveDiv.style.display = 'block';
+            archiveDiv.style.opacity = '1';
+            let selected = e.target;
+
+            archiveBox.addEventListener("dragover", function(e) {
+                e.preventDefault();
+            });
+
+            card.addEventListener("dragend", function(e) {
+                archiveDiv.style.display = 'none';
+                selected = null;
+            });
+
+            archiveBox.addEventListener("drop", function(e) {
+                e.preventDefault();
+                handleDrop(selected);
+            });
+        });
+    }
+
+    function hideArchivedCards() {
+    // Load archived cards from local storage
+    let archivedCards = JSON.parse(localStorage.getItem('archivedCards')) || [];
+    
+    // Iterate through each card
+    for (let card of cards) {
+        // Check if the card's inner HTML content is in the archived cards
+        if (archivedCards.includes(card.innerHTML)) {
+            card.style.display = 'none'; // Hide the card if it's archived
+        }
+    }
+}
+
+// Call the function to hide archived cards when the page loads
+window.addEventListener('load', hideArchivedCards);
+
+
+
+
+
+
+    
+   // dragover archivebox style
+
+   let archiveIcon = document.getElementById('archiveIcon');
+
+    archiveBox.addEventListener('dragover', function(event) {
+        event.preventDefault(); // Prevent default behavior
+        archiveBox.classList.add('dragover'); // Add 'dragover' class
+        
+    });
+
+    archiveBox.addEventListener('dragleave', function(event) {
+        archiveBox.classList.remove('dragover'); // Remove 'dragover' class when leaving
+        
+    });
+
+    archiveBox.addEventListener('drop', function(event) {
+        archiveBox.classList.remove('dragover'); // Remove 'dragover' class when leaving
+        
+    });
+
+
+    
+
+    
+</script>
