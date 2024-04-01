@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 
 def landing_page(request):
-    return render(request,'new.html')
+    return render(request,'landing_page.html')
 
 def dashboard(request):
     return render(request,'dashboard.html')

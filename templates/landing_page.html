@@ -3,9 +3,16 @@
 {% load static %}
 
 <style>
+    .featureCard2{
+        background-color: rgb(172, 250, 172);
+        box-shadow: 1px 5px 8px rgb(65, 216, 65);
+    }
+    .bclr{
+        background-color: palegreen;
+    }
     body{
-        /* background-color:  white; */
-        background-color: rgba(30, 255, 229, 0.2);
+        background-color:  white;
+        /* background-color: rgba(30, 255, 229, 0.2); */
         
     }
     
@@ -40,16 +47,27 @@
         left: -30px;
     } */
 
+    #Connect i{
+        color: white;
+    }
+    
+
     #Connect a:hover i{
         color: rgba(128, 128, 128, 0.667);
     }
     #Connect2 a:hover i{
         color: rgba(128, 128, 128, 0.667);
     }
+
+    .btn{
+        color: white;
+    }
+
     .btn:hover{
         box-shadow: 1px 8px 16px black;
         position: relative;
         top: -3px;
+        color: white;
         
     }
     #footer{
@@ -86,7 +104,7 @@
    }
    #circle1{
     fill: none;
-    stroke: rgb(26, 200, 212);
+    stroke: rgb(99, 209, 99);
     stroke-width: 20px;
     stroke-dasharray: 472;
     stroke-dashoffset: 472;
@@ -101,7 +119,7 @@
 
    #circle2{
     fill: none;
-    stroke: rgb(26, 200, 212);
+    stroke: rgb(99, 209, 99);
     stroke-width: 20px;
     stroke-dasharray: 472;
     stroke-dashoffset: 472;
@@ -114,7 +132,7 @@
    }
    #circle3{
     fill: none;
-    stroke: rgb(26, 200, 212);
+    stroke: rgb(99, 209, 99);
     stroke-width: 20px;
     stroke-dasharray: 472;
     stroke-dashoffset: 472;
@@ -200,18 +218,25 @@
         
     }
 
+    .text-white{
+        color: white;
+        text-shadow: 1px 1px black;
+    }
+    .btn-custom{
+        background-color: rgb(21, 135, 4);
+    }
     
     
     
 </style>
 
-<div class="py-5" id="upperDiv" style="background-color: rgba(77, 247, 190, 0.5);box-shadow: 0px 2px 9px 1px rgba(128, 128, 128, 0.553)">
+<div class="py-5 bclr" id="upperDiv" style="box-shadow: 0px 2px 9px 1px rgba(128, 128, 128, 0.553)">
     <div>
         <center>
             <h1 class="mt-5 display-4 " style="font-weight: 400;" >Crafting Expiriences, </h1>
-            <h2 class="mb-3 display-4">Building Relationships.</h2>
-            <p class="mb-4">Logo solutions are designed to elevate your business by seamlessly integrating <br> customer data, streamlining process, and enhacing overall engagement. </p>
-            <button class="btn mb-5 py-2 px-4" style="background-color:rgb(8, 160, 145) ;color: white;text-shadow: 1px 1px black;">Start Today</button>
+            <h2 class="mb-3 display-4 ">Building Relationships.</h2>
+            <p class="mb-4 ">Logo solutions are designed to elevate your business by seamlessly integrating <br> customer data, streamlining process, and enhacing overall engagement. </p>
+            <button class="btn mb-5 py-2 px-4 btn-custom" style="text-shadow: 1px 1px black;">Start Today</button>
         </center>
     </div>
 </div>
@@ -307,7 +332,7 @@
     <!-- jumbotron -->
     <div class="row mb-5 mt-4 ml-md-3">
         <div class="col-md-2"></div>
-        <div class="col-md-3"><img src="{% static 'images/Boost.png' %}" alt="" style="height: 15rem;width: 20rem;"></div>
+        <div class="col-md-3"><img src="{% static 'images/boost3.png' %}" alt="" style="height: 15rem;width: 20rem;"></div>
         <div class="col">
            <h1 class="display-4 mt-5">Boost Your Business.</h1>
           <p class="lead">With our efficient and organised ways, manage your business easily.</p>
@@ -316,13 +341,13 @@
 
 
 <!-- bottom curved div start-->
-<div class="py-5" id="BottomDiv" style="min-height: 30vh;background-color: rgba(77, 247, 190, 0.5);box-shadow: 0px -4px 9px -1px rgba(128, 128, 128, 0.553)">
+<div class="py-5 bclr" id="BottomDiv" style="min-height: 30vh;box-shadow: 0px -4px 9px -1px rgba(128, 128, 128, 0.553);">
     <br><br>
 
 <!-- buttons -->
 <div class="row d-flex my-5" >
     <div class="col-md-3"></div>
-    <div class="col-md-6" style="justify-content: center;display: flex;"><button class="btn mx-1 px-5 py-3" style="background-color:rgb(8, 160, 145) ;color: white;text-shadow: 1px 1px black;border-radius: 5px;">Get Started</button> <button class="btn mx-1 px-5" style="background-color:rgb(8, 160, 145) ;color: white;text-shadow: 1px 1px black;border-radius: 5px;">Register</button></div>
+    <div class="col-md-6" style="justify-content: center;display: flex;"><button class="btn mx-1 px-5 py-3 btn-custom" style="color: white;text-shadow: 1px 1px black;border-radius: 5px;">Get Started</button> <button class="btn mx-1 px-5 btn-custom" style="color: white;text-shadow: 1px 1px black;border-radius: 5px;">Register</button></div>
     <div class="col-md-3"></div>
 </div>
 <br>
@@ -336,7 +361,7 @@
        
        <div class="row mb-3">
         <div class="col-sm-6 mb-3 ">
-          <div class="card featureCard">
+          <div class="card featureCard2">
             <div class="card-body">
               <h5 class="card-title">Enable Automation</h5>
               <p class="card-text">Automate lead creation, team assignment, scheduled activities, and focus on what really matters.</p>
@@ -345,7 +370,7 @@
           </div>
         </div>
         <div class="col-sm-6 ">
-          <div class="card featureCard">
+          <div class="card featureCard2">
             <div class="card-body">
               <h5 class="card-title">AI lead scoring</h5>
               <p class="card-text">Too many leads? Our AI scores leads to ensure you always work on the right priorities.</p>
@@ -357,7 +382,7 @@
 
       <div class="row">
         <div class="col-sm-6 mb-3 ">
-          <div class="card featureCard">
+          <div class="card featureCard2">
             <div class="card-body">
               <h5 class="card-title">Manage leads</h5>
               <p class="card-text">Create, acquire, import, nurture, score, etc. Manage all aspects of your leads in a single place.</p>
@@ -366,7 +391,7 @@
           </div>
         </div>
         <div class="col-sm-6 ">
-          <div class="card featureCard">
+          <div class="card featureCard2">
             <div class="card-body">
               <h5 class="card-title">Reduce manual entry</h5>
               <p class="card-text">Send quotes in just a few clicks, manage your pipeline by drag-and-dropping, and more.</p>
@@ -404,7 +429,7 @@
 
 <div class="col-md-1 " id="Connect">
         <div id="connectHead" >
-            <h5>
+            <h5 style="color: white;">
                 <span>C</span>
                 <span>O</span>
                 <span>N</span>
