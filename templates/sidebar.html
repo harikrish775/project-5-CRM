@@ -12,11 +12,35 @@
     <script src="https://kit.fontawesome.com/30ecc6e708.js" crossorigin="anonymous"></script>
 </head>
 <style>
+    /* scrollbar */
+    /* Width */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: transparent;
+      
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #186cf4;
+      border-radius: 10px;
+      
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
     
     
     .bcolor{
         /* background-color: #a0ced9; */
-        background-color: transparent;
+        /* background-color: transparent; */
+        background-color: #7AA2E3;
         
     }
     .nv{
@@ -31,6 +55,7 @@
     }
 
     
+    
 
     .nitem::after {
         content: '';
@@ -39,21 +64,19 @@
         left: 0;
         width: 0; /* Initially, set width to 0 */
         height: 2px;
-        background-color: green;
+        background-color: #97E7E1;
         color: white;
         transition: width 0.3s ease; 
     }
 
     .nitem:hover::after {
         width: 75%; 
-        background-color: green;
+        
     }
 
     .sidebar {
     width: 250px; /* Adjust width as needed */
-    height: 100%; /* Make sidebar full height */
-    background-color: #f8f9fa; /* Set background color */
-    border-right: 1px solid rgba(128, 128, 128, 0.322); /* Add border on the right */
+    min-height: 100vh; /* Make sidebar full height */
     position: fixed; /* Make sidebar position fixed */
     top: 0; /* Align sidebar to the top */
     left: 0; /* Align sidebar to the left */
@@ -74,7 +97,7 @@
 
 .nav-link.active {
     font-weight: bold; /* Highlight active link */
-    background-color: palegreen;
+    background-color: #F8F6E3;
     color: black;
     border: 2px solid white;
     border-radius: 5px;
@@ -88,23 +111,34 @@
     #ul{
         padding-top: 80px;
     }
+    #mainBody{
+        border-top-left-radius: 0px;
+    }
+    
+    }
+
+    @media (min-width: 768px) {
+    
+    #mainBody{
+        border-top-left-radius: 50px;
+    }
     
     }
 
     
 </style>
 <body>
-    <div class="container-fluid">
-        <div class="row">
+    <div class="container-fluid" >
+        <div class="row" >
             <!-- Collapse Button -->
             <button style="z-index: 101;background-color: transparent;position: fixed;" class="btn d-md-none" type="button" data-toggle="collapse" data-target="#sidebarCollapse" aria-expanded="false" aria-controls="sidebarCollapse">
                 <span class="" style="z-index: 101;"><i class="fa-solid fa-bars"></i></span>
             </button>
     
             <!-- Sidebar Column -->
-            <div class="col-md-2 collapse d-md-block" id="sidebarCollapse" style="z-index: 100;">
-                <div class="sidebar" style="background-color: white;">
-                    <ul class="nav flex-column nv bcolor" id="ul">
+            <div class="col-md-2 collapse d-md-block bcolor" id="sidebarCollapse" style="z-index: 100;">
+                <div class="sidebar " >
+                    <ul class="nav flex-column nv bcolor" style="min-height: 100vh;" id="ul">
                         <li class="nav-item px-3 my-3" style="background-color: white;">
                             <a style="text-decoration: none;" href="{% url 'landing_page' %}"><img src="{% static 'images/logoo.png' %}" alt="logo" height="30"></a>   
                         </li>
@@ -127,7 +161,7 @@
                 </div>
             </div>
             <!-- Main Content Column -->
-            <div class="col-md-10">
+            <div class="col-md-10" style="background-color: #F8F6E3;" id="mainBody">
                 {% block content %}
                 {% endblock %}
             </div>
